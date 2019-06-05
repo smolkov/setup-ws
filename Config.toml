@@ -1,0 +1,3 @@
+[config.sshd]
+path= "/etc/ssh/sshd_config" 
+# conf = " AuthorizedKeysCommand=/usr/bin/gitsrht-dispatch "%u" "%h" "%t" "%k" AuthorizedKeysCommandUser=root PermitUserEnvironment SRHT_*"

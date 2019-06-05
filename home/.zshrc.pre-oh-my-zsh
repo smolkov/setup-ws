@@ -1,0 +1,92 @@
+source /path-to-antigen/antigen.zsh
+
+# Load the oh-my-zsh's library.
+antigen use oh-my-zsh
+
+# Bundles from the default repo (robbyrussell's oh-my-zsh).
+antigen bundle git
+antigen bundle heroku
+antigen bundle pip
+antigen bundle lein
+antigen bundle command-not-found
+
+# Syntax highlighting bundle.
+antigen bundle zsh-users/zsh-syntax-highlighting
+
+# Load the theme.
+antigen theme robbyrussell
+
+# Tell Antigen that you're done.
+antigen apply
+
+fpath+=~/.func
+fpath+=~/.zfunc
+
+
+
+# You may need to manually set your language environment
+export LANG=en_US.UTF-8
+
+# Preferred editor for local and remote sessions
+if [[ -n $SSH_CONNECTION ]]; then
+   export EDITOR='vim'
+ else
+   export EDITOR='vim'
+ fi
+
+
+# ssh
+export SSH_KEY_PATH="~/.ssh/rsa_id"
+
+# Set personal aliases, overriding those provided by oh-my-zsh libs,
+# plugins, and themes. Aliases can be placed here, though oh-my-zsh
+# users are encouraged to define aliases within the ZSH_CUSTOM folder.
+# For a full list of active aliases, run `alias`.
+#
+# Example aliases
+alias zshconfig="mate ~/.zshrc"
+#
+#Setup nodejs,npm envelopment
+#
+source $HOME/.cargo/env
+source $HOME/.npm-packages/.env
+
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# Wasmer
+#export WASMER_DIR="$HOME/.wasmer"
+# [ -s "$WASMER_DIR/wasmer.sh" ] && source "$WASMER_DIR/wasmer.sh"  # This loads wasmer
+
+# The next line updates PATH for the Google Cloud SDK.
+#if [ -f '/home/sascha/google-cloud-sdk/path.zsh.inc' ]; then . '/home/sascha/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+
+# if [ -f '/home/sascha/google-cloud-sdk/completion.zsh.inc' ]; then . '/home/sascha/google-cloud-sdk/completion.zsh.inc'; fi
+
+# Base16 Shell
+BASE16_SHELL="$HOME/.config/base16-shell/"
+[ -n "$PS1" ] && \
+    [ -s "$BASE16_SHELL/profile_helper.sh" ] && \
+        eval "$("$BASE16_SHELL/profile_helper.sh")"
+
+export PATH="$HOME/bin:$PATH"
+export PATH="$HOME/bin/firefox:$PATH"
+export PATH="$PATH:~/.jx/bin"
+export PATH="$HOME/.local/bin:$PATH"
+export MANPATH="/usr/local/man:$MANPATH"
+
+## Aliases
+
+alias cat='bat'
+alias ls='exa'
+alias la='exa -l'
+alias lh='exa -l'
+
+function go_to_project() {
+  cd $(fuzzy-repo-finder --projectRoots "${HOME}/projects,${HOME}/go/src" $@)
+}
+alias g='go_to_project'
+# . <(azure --completion)
+#

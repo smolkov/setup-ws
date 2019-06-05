@@ -1,0 +1,24 @@
+{
+    "vim.easymotion": true,
+    "vim.hlsearch": true,
+    "vim.useCtrlKeys": false,
+    "breadcrumbs.enabled": true,
+    "window.zoomLevel": 0,
+    "[javascript]": {
+        
+    },
+    "editor.fontFamily": "'FuraMono Nerd Font', 'FuraMono', 'Droid Sans Fallback'",
+    "editor.fontLigatures": true,
+    "debug.console.fontFamily": "FuraMono Nerd Font",
+    "vim.easymotionMarkerFontFamily": "FuraMono Nerd Font",
+    "terminal.integrated.fontFamily": "FuraMono Nerd Font Mono",
+    "files.autoSave": "afterDelay",
+    "workbench.colorTheme": "One Dark Pro Bold",
+    "files.watcherExclude": {
+        ".col": true,
+        "example-*": true
+    },
+    "git.confirmSync": false,
+    "rust.all_features": true,
+    "rust.unstable_features": true
+}
